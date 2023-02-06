@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1675581302258" clover="3.2.0">
+  <project timestamp="1675581302258" name="All files">
+    <metrics statements="111" coveredstatements="111" conditionals="23" coveredconditionals="22" methods="22" coveredmethods="22" elements="156" coveredelements="155" complexity="0" loc="111" ncloc="111" packages="6" files="7" classes="7"/>
+    <package name="data">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="automobiles.js" path="/Users/davelindqvist/Desktop/node-7awfa8/BE/data/automobiles.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="150004" count="2" type="stmt"/>
+      </file>
+      <file name="users.js" path="/Users/davelindqvist/Desktop/node-7awfa8/BE/data/users.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src">
+      <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="/Users/davelindqvist/Desktop/node-7awfa8/BE/src/index.js">
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.controller">
+      <metrics statements="49" coveredstatements="49" conditionals="12" coveredconditionals="11" methods="16" coveredmethods="16"/>
+      <file name="automobiles.js" path="/Users/davelindqvist/Desktop/node-7awfa8/BE/src/controller/automobiles.js">
+        <metrics statements="49" coveredstatements="49" conditionals="12" coveredconditionals="11" methods="16" coveredmethods="16"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="50000" type="stmt"/>
+        <line num="13" count="12440" type="stmt"/>
+        <line num="25" count="5" type="stmt"/>
+        <line num="27" count="12440" type="stmt"/>
+        <line num="28" count="11440" type="stmt"/>
+        <line num="29" count="145344" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="111240" type="stmt"/>
+        <line num="34" count="2544" type="stmt"/>
+        <line num="36" count="5" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="46" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="48" count="36" type="stmt"/>
+        <line num="51" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="54" count="35" type="stmt"/>
+        <line num="57" count="3" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="61" count="3" type="stmt"/>
+        <line num="62" count="30000" type="stmt"/>
+        <line num="65" count="3" type="stmt"/>
+        <line num="66" count="7576" type="stmt"/>
+        <line num="69" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="76" count="2" type="stmt"/>
+        <line num="82" count="3" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="1" type="stmt"/>
+        <line num="87" count="1" type="stmt"/>
+        <line num="88" count="5" type="stmt"/>
+        <line num="89" count="5" type="stmt"/>
+        <line num="90" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="91" count="5" type="stmt"/>
+        <line num="95" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="97" count="10000" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="108" count="1" type="stmt"/>
+        <line num="112" count="1" type="stmt"/>
+        <line num="114" count="1" type="stmt"/>
+        <line num="117" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.middleware">
+      <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <file name="auth.js" path="/Users/davelindqvist/Desktop/node-7awfa8/BE/src/middleware/auth.js">
+        <metrics statements="15" coveredstatements="15" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="5" count="12" type="stmt"/>
+        <line num="6" count="12" type="stmt"/>
+        <line num="7" count="12" type="stmt"/>
+        <line num="8" count="12" type="stmt"/>
+        <line num="9" count="60" type="stmt"/>
+        <line num="11" count="12" type="cond" truecount="4" falsecount="0"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="9" type="stmt"/>
+        <line num="16" count="9" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes.automobiles">
+      <metrics statements="22" coveredstatements="22" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <file name="router.js" path="/Users/davelindqvist/Desktop/node-7awfa8/BE/src/routes/automobiles/router.js">
+        <metrics statements="22" coveredstatements="22" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="12" count="5" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="19" count="5" type="cond" truecount="5" falsecount="0"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="28" count="5" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="3" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes.middleware">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="router.js" path="/Users/davelindqvist/Desktop/node-7awfa8/BE/src/routes/middleware/router.js">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
