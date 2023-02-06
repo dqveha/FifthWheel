@@ -5,7 +5,7 @@ import Form from "../components/Form";
 export default function Search() {
   return (
     <>
-      <h1>Search</h1>
+      <h1>Search Automobiles</h1>
       <Form formType={"search"} />
     </>
   );
