@@ -3,20 +3,45 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { UserContext } from "../utils/UserContext";
 import CustomPaginationActionsTable from "./CustomPaginationActionsTable";
+import { useMutation, useQueryClient } from "react-query";
+
+const searchAutomobiles = async (data) => {
+  const response = await axios({
+    method: "POST",
+    url: "http://localhost:6060/api/automobiles/search",
+    data: data,
+    // headers: {
+    //   // authorization: `Bearer ${token}`,
+    //   "content-type": "application/json",
+    // },
+  });
+  return response.data;
+};
 
 export default function Form(props) {
+  const queryClient = useQueryClient();
+  const { formType } = props;
+  const { userProfile } = React.useContext(UserContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [automobiles, setAutomobiles] = React.useState(null);
 
-  const { formType } = props;
-  const { userProfile } = React.useContext(UserContext);
-
-  React.useEffect(() => {
-    console.log(formType);
-  }, [formType]);
+  const { mutate } = useMutation(searchAutomobiles, {
+    onSuccess: (data) => {
+      setAutomobiles(data);
+      const message = "success";
+      alert(message);
+    },
+    onError: () => {
+      alert("there was an error");
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries("create");
+    },
+  });
 
   const onSubmit = async (data) => {
     const {
@@ -31,10 +56,13 @@ export default function Form(props) {
       lowestPricePoint,
       highestPricePoint,
     } = data;
+    const { username, password, dealershipId } = userProfile;
 
     if (formType === "search") {
       const dataAndUser = {
-        userProfile,
+        username,
+        password,
+        dealershipId,
         data: {
           details: { manufacturer, model, type, fuel, vin, color, condition },
           priceType,
@@ -42,7 +70,8 @@ export default function Form(props) {
           highestPricePoint,
         },
       };
-      console.log(dataAndUser);
+
+      mutate(dataAndUser);
     }
     if (formType === "update") {
       const dataAndUser = { userProfile, data: { details: data } };
@@ -108,7 +137,7 @@ export default function Form(props) {
 
         <input type="submit" />
       </form>
-      <CustomPaginationActionsTable />
+      <CustomPaginationActionsTable automobiles={automobiles} />
     </>
   );
 }

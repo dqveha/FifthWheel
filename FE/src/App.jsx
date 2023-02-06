@@ -7,6 +7,10 @@ import Search from "./pages/Search";
 import Update from "./pages/Update";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { UserContext } from "./utils/UserContext";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevTools } from "react-query-devtools";
+
+const queryClient = new QueryClient({});
 
 const App = () => {
   const navigate = useNavigate();
@@ -102,12 +106,15 @@ const App = () => {
         </form>
       ) : (
         <>
-          <UserContext.Provider value={userProfile}>
-            <Routes>
-              <Route path="/search" element={<Search />} />
-              <Route path="/update" element={<Update />} />
-            </Routes>
-          </UserContext.Provider>
+          <QueryClientProvider client={queryClient}>
+            <UserContext.Provider value={userProfile}>
+              <Routes>
+                <Route path="/search" element={<Search />} />
+                <Route path="/update" element={<Update />} />
+              </Routes>
+            </UserContext.Provider>
+            {/* <ReactQueryDevTools initialIsOpen={true} /> */}
+          </QueryClientProvider>
         </>
       )}
     </>

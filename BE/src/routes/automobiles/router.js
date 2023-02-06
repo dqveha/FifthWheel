@@ -8,8 +8,8 @@ const {
   updateAutomobile,
 } = require("../../controller/automobiles");
 
-automobilesRouter.get("/search", authentication(), (req, res, next) => {
-  console.log("REQ BODY >>>>>>> LINE 13 @ automobiles ", req.body);
+automobilesRouter.post("/search", authentication(), (req, res, next) => {
+  console.log(req.body);
 
   const dealershipId = res.locals.user.dealershipId;
   const { priceType, lowestPricePoint, highestPricePoint } = req.body.data;
@@ -18,7 +18,7 @@ automobilesRouter.get("/search", authentication(), (req, res, next) => {
   let results;
   results = searchDealershipLotByDetails(dealershipId, searchedValues);
 
-  if (lowestPricePoint || highestPricePoint || priceType) {
+  if ((lowestPricePoint || highestPricePoint) && priceType) {
     results = searchByPrice(
       results,
       lowestPricePoint,
@@ -27,7 +27,7 @@ automobilesRouter.get("/search", authentication(), (req, res, next) => {
     );
   }
 
-  res.status(200).json(results);
+  res.status(200).send(results);
 });
 
 automobilesRouter.put(
