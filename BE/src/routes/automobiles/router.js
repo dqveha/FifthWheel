@@ -9,8 +9,6 @@ const {
 } = require("../../controller/automobiles");
 
 automobilesRouter.post("/search", authentication(), (req, res, next) => {
-  console.log(req.body);
-
   const dealershipId = res.locals.user.dealershipId;
   const { priceType, lowestPricePoint, highestPricePoint } = req.body.data;
   const searchedValues = Object.values(req.body.data?.details);
