@@ -6,7 +6,7 @@ This project started as a coding assessment from another interview. It asked to 
 
 In order to further show my capabilities, I added a frontend using Vite to create a React app. In it, I incorporated React-Hook-Form, MUI, and React-Query.
 
-NOTE: As much as I wanted to host this on Stackblitz for your convenience, I wasn't able to properly link the front and backend to simaltaneously work upon running it. I can speak about this issue during the interview, if requested.
+NOTE: As much as I wanted to host this on Stackblitz for convenience, I couldn't properly link the front and backend simaltaneously. I can speak about this issue during the interview, if requested.
 
 #
 
