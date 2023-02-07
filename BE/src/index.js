@@ -14,7 +14,14 @@ app.listen(serverPort, () =>
   console.log(`API Server listening on port ${serverPort}`)
 );
 
-app.use(cors({ origin: ["http://127.0.0.1:5173"] }));
+app.use(
+  cors({
+    origin: [
+      "http://127.0.0.1:5173",
+      "https://nodeyjpvaf-m31v--5173.local-corp.webcontainer.io",
+    ],
+  })
+);
 
 app.use("/api", apiRouter);
 apiRouter.use("/middleware", middlewareRouter);
