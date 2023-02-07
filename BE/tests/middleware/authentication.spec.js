@@ -32,6 +32,7 @@ describe("Authentication - POST /api/middleware//authenticate", () => {
     const response = await request(app).post("/api/middleware//authenticate");
     console.log(response);
     expect(response.body.message).toEqual("Access Denied");
+    expect(response.status).toBe(401);
   });
 
   it("tests endpoint and should return 'Access Denied' if the username is mispelled", async () => {
@@ -39,6 +40,7 @@ describe("Authentication - POST /api/middleware//authenticate", () => {
       .post("/api/middleware//authenticate")
       .send(incorrectUserLogin);
     expect(response.body.message).toEqual("Access Denied");
+    expect(response.status).toBe(401);
   });
 
   it("tests endpoint and should return 'Access Denied' if the password is incorrect", async () => {
@@ -46,6 +48,7 @@ describe("Authentication - POST /api/middleware//authenticate", () => {
       .post("/api/middleware//authenticate")
       .send(incorrectUserPassword);
     expect(response.body.message).toEqual("Access Denied");
+    expect(response.status).toBe(401);
   });
 
   it("tests endpoint and should return 'Authenticated' if the username/password is correct", async () => {
@@ -53,5 +56,6 @@ describe("Authentication - POST /api/middleware//authenticate", () => {
       .post("/api/middleware//authenticate")
       .send(correctUserLogin);
     expect(response.body.message).toEqual("Authenticated");
+    expect(response.status).toBe(200);
   });
 });

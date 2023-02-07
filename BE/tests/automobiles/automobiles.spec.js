@@ -24,6 +24,7 @@ describe("Automobiles (Search) - POST /api/automobiles/search", () => {
         },
       });
     expect(response.body.length).toBe(2472);
+    expect(response.status).toBe(200);
   });
 
   it("tests endpoint and should return 18 sample objects in an array that has 'green' and 'heavily_used' values", async () => {
@@ -46,6 +47,7 @@ describe("Automobiles (Search) - POST /api/automobiles/search", () => {
       ])
     );
     expect(response.body.length).toBe(18);
+    expect(response.status).toBe(200);
   });
 
   it("tests endpoint and should return 2 sample objects in an array that has 'green' and 'heavily_used' values after limiting the price point to be 2000", async () => {
@@ -70,6 +72,7 @@ describe("Automobiles (Search) - POST /api/automobiles/search", () => {
       ])
     );
     expect(response.body.length).toBe(2);
+    expect(response.status).toBe(200);
   });
 
   it("tests endpoint and should return 17 sample objects in an array that has 'green' and 'heavily_used' values with the lowest price at 1000", async () => {
@@ -94,6 +97,7 @@ describe("Automobiles (Search) - POST /api/automobiles/search", () => {
       ])
     );
     expect(response.body.length).toBe(17);
+    expect(response.status).toBe(200);
   });
 
   it("tests endpoint and should return 1 sample objects in an array that has 'green' and 'heavily_used' values with the lowest price at 1000 and highest price at 2000", async () => {
@@ -119,6 +123,7 @@ describe("Automobiles (Search) - POST /api/automobiles/search", () => {
       ])
     );
     expect(response.body.length).toBe(1);
+    expect(response.status).toBe(200);
   });
 });
 
@@ -139,6 +144,7 @@ describe("Automobiles (Update) - PUT /api/automobiles/automobile", () => {
         },
       });
     expect(response.body).toBe("Access Denied");
+    expect(response.status).toBe(401);
   });
 
   it("tests endpoint and should update specified automobile then return with its new information", async () => {
@@ -173,6 +179,7 @@ describe("Automobiles (Update) - PUT /api/automobiles/automobile", () => {
       dealershipId: "62497531",
       dealershipName: "Hunkajunk Auto Sales",
     });
+    expect(response.status).toBe(200);
   });
 
   it("tests endpoint and should not be able to update automobile's id", async () => {
@@ -204,5 +211,6 @@ describe("Automobiles (Update) - PUT /api/automobiles/automobile", () => {
       dealershipName: "Hunkajunk Auto Sales",
     });
     expect(response.body).toEqual("Access Denied");
+    expect(response.status).toBe(401);
   });
 });
