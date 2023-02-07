@@ -27,7 +27,7 @@ NOTE: As much as I wanted to host this on Stackblitz for your convenience, I was
 6. `npm run dev`
 7. View `http://127.0.0.1:5173/` in internet browser
 
-NOTE: Step #4 and #5 uses a dependency called `Concurrently` to run script commands from the different package.json (BE and FE)
+NOTE: Step #5 and #6 uses a dependency called `Concurrently` to run script commands from the different package.json (BE and FE)
 
 #
 
