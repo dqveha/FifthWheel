@@ -1,5 +1,5 @@
-const { automobiles } = require('../../data/automobiles');
-const fs = require('fs');
+const { automobiles } = require("../../data/automobiles");
+const fs = require("fs");
 
 const searchDealershipLotByDetails = (dealershipId, searchTerms) => {
   const currentDealershipLot = automobiles.filter((automobile) => {
@@ -26,7 +26,7 @@ const searchDealershipLotByDetails = (dealershipId, searchTerms) => {
     .filter(([, strings]) =>
       searchTerms.every((term) =>
         strings.some((string) => {
-          if (typeof string === 'string')
+          if (typeof string === "string")
             return string.toLowerCase().includes(term.toLowerCase());
         })
       )
@@ -105,11 +105,11 @@ const updateAutomobile = (
   // To mimic database changes, the file is updated with fs
   const stringifiedDb = JSON.stringify(updatedAutomobileWithDb, null, 2);
   const updatedDb =
-    'const automobiles = ' +
+    "const automobiles = " +
     stringifiedDb +
-    '; ' +
-    '\n\nmodule.exports.automobiles = automobiles';
-  fs.writeFileSync('./data/automobiles.js', updatedDb);
+    "; " +
+    "\n\nmodule.exports.automobiles = automobiles";
+  fs.writeFileSync("./data/automobiles.js", updatedDb);
 
   return updatedAutomobileObject;
 };
