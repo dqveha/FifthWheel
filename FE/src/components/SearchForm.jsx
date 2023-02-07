@@ -1,10 +1,10 @@
 import React from "react";
-import { Box } from "@mui/material";
 import axios from "axios";
 import DataGridAutomobiles from "./DataGridAutomobiles";
+import { Box } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { UserContext } from "../utils/UserContext";
 import { useMutation } from "react-query";
+import { UserContext } from "../utils/UserContext";
 
 const searchAutomobiles = async (data) => {
   const response = await axios({
@@ -21,11 +21,7 @@ const searchAutomobiles = async (data) => {
 
 export default function SearchForm() {
   const { userProfile } = React.useContext(UserContext);
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
   const [automobiles, setAutomobiles] = React.useState(null);
 
   const { mutate } = useMutation(searchAutomobiles, {
@@ -131,8 +127,8 @@ export default function SearchForm() {
           Ideally, automobiles should already be pre-populated with a "GET"
           method. However, the API is setup as a "POST" method with a returned
           array of objects and requires an act of querying to obtain results.
-          This is due to the limitation of the authorization middleware I
-          created.
+          This is due to the limitation of how I implemented the authentication
+          middleware.
         </p>
         <p>
           Edits can be made into the datagrid by double clicking on one of the
