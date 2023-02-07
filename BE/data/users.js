@@ -30,9 +30,16 @@ const users = [
   {
     userId: "ez",
     name: "Davey Dave",
-    username: "DFA1979",
-    password: "DFA1979",
+    username: "Godspeed",
+    password: "GYBE",
     dealershipId: "78945412",
+  },
+  {
+    userId: "pz",
+    name: "Lenny Lennon",
+    username: "Turnstile",
+    password: "TLC",
+    dealershipId: "62497531",
   },
 ];
 
