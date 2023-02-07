@@ -9,6 +9,10 @@ import { UserContext } from "./utils/UserContext";
 import { useMutation } from "react-query";
 import { Box } from "@mui/material";
 
+/**
+ * Bcrypt should be used during registration/login with database along with an exchange of JWTs. But for simplicity sake of the code and project, I'm leaving it out.
+ * */
+
 const loginUser = async (data) => {
   const response = await axios({
     url: "http://localhost:6060/api/middleware/authenticate",
@@ -39,16 +43,12 @@ const App = () => {
     onSuccess: (data) => {
       setUserProfile(data);
       clearErrors("serverResponse");
-      navigate("/search");
+      navigate("/");
     },
     onError: () => {
       setError(true);
     },
   });
-
-  /**
-   * Bcrypt should be used during registration/login with database along with an exchange of JWTs. But for the sake of the code and project, I'm leaving it out.
-   * */
 
   const onSubmit = async (data) => {
     const { username, password } = data;
@@ -69,10 +69,12 @@ const App = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 placeholder="Username"
+                defaultValue="Turnstile"
                 {...register("username", { required: "Username is required" })}
               />
               <input
                 placeholder="Password"
+                defaultValue="TLC"
                 type={"password"}
                 {...register("password", { required: "Password is required" })}
               />
@@ -127,7 +129,7 @@ const App = () => {
         <>
           <UserContext.Provider value={userProfile}>
             <Routes>
-              <Route path="/search" element={<Search />} />
+              <Route path="/" element={<Search />} />
             </Routes>
           </UserContext.Provider>
         </>
