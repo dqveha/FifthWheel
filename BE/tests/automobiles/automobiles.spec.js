@@ -11,10 +11,10 @@ afterEach(() => {
   server.close();
 });
 
-describe("Automobiles (Search) - GET /api/automobiles/search", () => {
+describe("Automobiles (Search) - POST /api/automobiles/search", () => {
   it("tests endpoint with no details in the body and should return an array of objects with a length of 2472", async () => {
     const response = await request(app)
-      .get("/api/automobiles/search")
+      .post("/api/automobiles/search")
       .send({
         username: "sun_tomorrow",
         password: "yummy*&browser)(cookies",
@@ -28,7 +28,7 @@ describe("Automobiles (Search) - GET /api/automobiles/search", () => {
 
   it("tests endpoint and should return 18 sample objects in an array that has 'green' and 'heavily_used' values", async () => {
     const response = await request(app)
-      .get("/api/automobiles/search")
+      .post("/api/automobiles/search")
       .send({
         username: "khakis4me",
         password: "i_secretly*like%geico",
@@ -50,7 +50,7 @@ describe("Automobiles (Search) - GET /api/automobiles/search", () => {
 
   it("tests endpoint and should return 2 sample objects in an array that has 'green' and 'heavily_used' values after limiting the price point to be 2000", async () => {
     const response = await request(app)
-      .get("/api/automobiles/search")
+      .post("/api/automobiles/search")
       .send({
         username: "khakis4me",
         password: "i_secretly*like%geico",
@@ -74,7 +74,7 @@ describe("Automobiles (Search) - GET /api/automobiles/search", () => {
 
   it("tests endpoint and should return 17 sample objects in an array that has 'green' and 'heavily_used' values with the lowest price at 1000", async () => {
     const response = await request(app)
-      .get("/api/automobiles/search")
+      .post("/api/automobiles/search")
       .send({
         username: "khakis4me",
         password: "i_secretly*like%geico",
@@ -98,7 +98,7 @@ describe("Automobiles (Search) - GET /api/automobiles/search", () => {
 
   it("tests endpoint and should return 1 sample objects in an array that has 'green' and 'heavily_used' values with the lowest price at 1000 and highest price at 2000", async () => {
     const response = await request(app)
-      .get("/api/automobiles/search")
+      .post("/api/automobiles/search")
       .send({
         username: "khakis4me",
         password: "i_secretly*like%geico",
