@@ -4,7 +4,6 @@ import "./App.css";
 import axios from "axios";
 import { ErrorMessage } from "@hookform/error-message";
 import Search from "./pages/Search";
-import Update from "./pages/Update";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { UserContext } from "./utils/UserContext";
 import { useMutation } from "react-query";
@@ -48,7 +47,7 @@ const App = () => {
   });
 
   /**
-   * Bcrypt should be used during registration/login with database along with an exchange of JWTs. But for the sake of the code and project, I'll leave it out.
+   * Bcrypt should be used during registration/login with database along with an exchange of JWTs. But for the sake of the code and project, I'm leaving it out.
    * */
 
   const onSubmit = async (data) => {
@@ -59,58 +58,76 @@ const App = () => {
   return (
     <>
       {!userProfile ? (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              placeholder="Username"
-              {...register("username", { required: "Username is required" })}
-            />
-            <input
-              placeholder="Password"
-              {...register("password", { required: "Password is required" })}
-            />
-            <ErrorMessage
-              errors={errors}
-              name="username"
-              render={({ messages }) =>
-                messages &&
-                Object.entries(messages).map(([type, message]) => (
-                  <p key={type} className="error">
-                    {message}
-                  </p>
-                ))
-              }
-            />
-            <ErrorMessage
-              errors={errors}
-              name="password"
-              render={({ messages }) =>
-                messages &&
-                Object.entries(messages).map(([type, message]) => (
-                  <p key={type} className="error">
-                    {message}
-                  </p>
-                ))
-              }
-            />
-            {error && (
-              <p className="error">Incorrect Username and/or Password</p>
-            )}
+        <>
+          <h1>Fifth Wheel Automobiles</h1>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input
+                placeholder="Username"
+                {...register("username", { required: "Username is required" })}
+              />
+              <input
+                placeholder="Password"
+                type={"password"}
+                {...register("password", { required: "Password is required" })}
+              />
+              <ErrorMessage
+                errors={errors}
+                name="username"
+                render={({ messages }) =>
+                  messages &&
+                  Object.entries(messages).map(([type, message]) => (
+                    <p key={type} className="error">
+                      {message}
+                    </p>
+                  ))
+                }
+              />
+              <ErrorMessage
+                errors={errors}
+                name="password"
+                render={({ messages }) =>
+                  messages &&
+                  Object.entries(messages).map(([type, message]) => (
+                    <p key={type} className="error">
+                      {message}
+                    </p>
+                  ))
+                }
+              />
+              {error && (
+                <p className="error">Incorrect Username and/or Password</p>
+              )}
 
-            <button type="submit">LOGIN</button>
-          </form>
-        </Box>
+              <button type="submit">LOGIN</button>
+            </form>
+          </Box>
+          <Box
+            sx={{
+              justifyContent: "center",
+              p: 1,
+              m: 1,
+              bgcolor: "background.paper",
+            }}
+          >
+            <h3>Demo Login #1</h3>
+            <p>Username: Turnstile</p>
+            <p>Password: TLC</p>
+            <h3>Demo Login #2</h3>
+            <p>Username: Godspeed</p>
+            <p>Password: GYBE</p>
+          </Box>
+        </>
       ) : (
         <>
           <UserContext.Provider value={userProfile}>
             <Routes>
               <Route path="/search" element={<Search />} />
-              <Route path="/update" element={<Update />} />
             </Routes>
           </UserContext.Provider>
         </>
