@@ -1,0 +1,23 @@
+{
+  "name": "fifthwheel",
+  "version": "1.0.0",
+  "description": "Automobile FE + BE",
+  "scripts": {
+    "install-be": "cd BE && npm i",
+    "install-fe": "cd FE && npm i",
+    "install": "concurrently \"npm run install-be\" \"npm run install-fe\"", 
+    "dev-be": "cd BE && npm run dev",
+    "dev-fe": "cd FE && npm run dev",
+    "dev": "concurrently \"npm run dev-be\" \"npm run dev-fe\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dqveha/node-7awfa8.git"
+  },
+  "author": "Dave Lindqvist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dqveha/node-7awfa8/issues"
+  },
+  "homepage": "https://github.com/dqveha/node-7awfa8#readme"
+}
